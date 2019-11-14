@@ -2,3 +2,5 @@
 My first attempt
 
 Hello, word!
+
+И Вам ЗДРАСЬТЕ!
