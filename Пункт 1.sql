@@ -141,3 +141,5 @@ ALTER TABLE public.listing
 
 copy public.listing  FROM '/Users/diana/Desktop/Семинар/listing.csv' DELIMITER ';' CSV HEADER;
 
+-- Комментарий:
+-- описание преобразования данных до импорта в БД неполное. Исполнение кода приводит к ошибкам импорта из-за несоответствия данных форматам полей.
