@@ -15,3 +15,8 @@ FROM public.listing, public.quotes
 WHERE public.listing." Platform" = 'Московская Биржа ' AND public.listing."BOARDID" = 'MAIN'
 GROUP BY public.listing."ISIN", public.listing."IssuerName"
 HAVING (((COUNT("BID"))/(COUNT(*))) * 100) > 90
+
+-- Комментарий:
+-- Остутствие котировки - это не только NULL, но и 0.
+-- Откуда в таблице listing возникнут данные их таблиц quotes? Подумайте о том, чтобы использовать конструкцию join.
+-- Запросы следует завершать ";".
