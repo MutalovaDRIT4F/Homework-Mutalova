@@ -25,3 +25,6 @@ UPDATE public.listing
 SET "BOARDID" = public.quotes."BOARDID", "BOARDNAME" = public.quotes."BOARDNAME"
 FROM public.quotes
 WHERE public.quotes."ISIN" = public.listing."ISIN";
+
+-- Комментарий:
+-- похоже на правду. Факт проверим после создания таблиц.
