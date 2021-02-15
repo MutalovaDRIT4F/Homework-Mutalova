@@ -1,10 +1,10 @@
---Если бы нам просто нужно было бы выбрать соответветствующие данные из таблиц public.quotes (данные о площадке) и 
+--Если бы нам просто нужно было бы выбрать соответствующие данные из таблиц public.quotes (данные о площадке) и 
 --public.bond_description (данные об эмитенте), то запрос выглядел бы следующим образом:  
 SELECT DISTINCT public.bond_description."IssuerName", public.bond_description."IssuerName_NRD", public.bond_description."IssuerOKPO", public.quotes."BOARDID", public.quotes."BOARDNAME"
 FROM public.bond_description INNER JOIN public.quotes
 ON public.bond_description."ISINCode" = public.quotes."ISIN";
 
---Поскольку нам необходимо поместитьт выбранные данные в таблицу public.listing, то мы вносим изменения в нее с помощью 
+--Поскольку нам необходимо поместить выбранные данные в таблицу public.listing, то мы вносим изменения в нее с помощью 
 --ALTER TABLE, добавляя 5 столбцов с названиями, которые соответствуют названиям добавляемых столбцов 
 --задаем параметры новых столбов в соответствии с их изначальными типами данных
 ALTER TABLE public.listing 
@@ -25,6 +25,3 @@ UPDATE public.listing
 SET "BOARDID" = public.quotes."BOARDID", "BOARDNAME" = public.quotes."BOARDNAME"
 FROM public.quotes
 WHERE public.quotes."ISIN" = public.listing."ISIN";
-
--- Комментарий:
--- похоже на правду. Факт проверим после создания таблиц.
